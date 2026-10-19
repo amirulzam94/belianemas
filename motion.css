@@ -640,7 +640,7 @@ h1,h2,h3{font-weight:700;color:#111}
 .capability-row-arrow .site-arrow{width:19px;height:19px}
 
 /* Match the reference footer's oversized Contact Us line and upper-right arrow. */
-.site-footer{padding-inline:clamp(24px,2.7vw,40px)}
+.site-footer{padding-inline:max(48px,calc((100vw - 1440px)/2))}
 .footer-cta{position:relative;display:block;height:.8em;overflow:hidden;padding:0;font-size:clamp(108px,18vw,280px);font-weight:400;line-height:1;letter-spacing:-.066em;white-space:nowrap}
 .footer-cta>.site-arrow{position:absolute;top:.02em;right:0;width:clamp(56px,4.4vw,68px);height:clamp(56px,4.4vw,68px);vertical-align:baseline;transition:transform .25s}
 .footer-cta:hover>.site-arrow{transform:translate(5px,-5px)}
