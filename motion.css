@@ -678,7 +678,7 @@ main{flex:1 0 auto}
 .hero-cert-strip>a:hover,.hero-cert-strip>a:focus-visible{color:#fff;text-decoration:underline;text-underline-offset:3px}
 .hero-cert-more{gap:9px}
 .hero-cert-more strong{font-size:23px;line-height:1;letter-spacing:-.04em}
-.hero-cert-more span{font-size:11px;line-height:1.2}
+.hero-cert-more span{font-size:11px;line-height:1.2;font-weight:400}
 @media(max-width:760px){
  .hero-cert-strip{bottom:18px}
  .hero-cert-strip>a{padding-inline:12px;font-size:9px}
