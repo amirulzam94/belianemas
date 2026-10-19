@@ -670,6 +670,21 @@ main{flex:1 0 auto}
 .hero-actions>.btn-red{justify-content:space-between;min-width:160px;gap:20px;padding-left:18px;padding-right:8px}
 .hero-actions>.btn-red>.site-arrow{position:static;margin:0;flex:none}
 .hero-actions>.btn-glass{padding-inline:28px}
+.hero-cert-strip{position:absolute;left:0;bottom:24px;display:flex;align-items:center;max-width:100%;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+.hero-cert-strip::-webkit-scrollbar{display:none}
+.hero-cert-strip>a{display:inline-flex;align-items:center;flex:0 0 auto;min-height:32px;padding:0 22px;border-right:1px solid #ffffff80;color:#fff;font-size:12px;font-weight:600;line-height:1.2}
+.hero-cert-strip>a:first-child{padding-left:0}
+.hero-cert-strip>a:last-child{padding-right:0;border-right:0}
+.hero-cert-strip>a:hover,.hero-cert-strip>a:focus-visible{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.hero-cert-more{gap:9px}
+.hero-cert-more strong{font-size:23px;line-height:1;letter-spacing:-.04em}
+.hero-cert-more span{font-size:11px;line-height:1.2}
+@media(max-width:760px){
+ .hero-cert-strip{bottom:18px}
+ .hero-cert-strip>a{padding-inline:12px;font-size:9px}
+ .hero-cert-more strong{font-size:18px}
+ .hero-cert-more span{font-size:9px}
+}
 
 /* Center the Contact Us label and arrow together. */
 .header-contact{justify-content:center;min-width:180px;gap:14px}
