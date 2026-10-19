@@ -667,8 +667,9 @@ main{flex:1 0 auto}
 .site-footer{flex:none;margin-bottom:0;padding-bottom:0}
 
 /* Homepage hero actions and credential count. */
-.hero-actions>.btn-red{position:relative;justify-content:center;min-width:155px}
-.hero-actions>.btn-red>.site-arrow{position:absolute;right:8px;margin:0}
+.hero-actions>.btn-red{justify-content:space-between;min-width:160px;gap:20px;padding-left:18px;padding-right:8px}
+.hero-actions>.btn-red>.site-arrow{position:static;margin:0;flex:none}
+.hero-actions>.btn-glass{padding-inline:28px}
 .hero-cert-count{position:absolute;right:0;bottom:27px;display:flex;align-items:baseline;gap:12px;color:#fff;text-align:right}
 .hero-cert-count strong{font-size:clamp(36px,4vw,54px);font-weight:700;line-height:1;letter-spacing:-.07em}
 .hero-cert-count span{font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
