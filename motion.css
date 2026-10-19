@@ -690,9 +690,10 @@ main{flex:1 0 auto}
  .project-carousel-footer .text-link>.site-arrow{width:12px;height:12px}
 }
 
-/* Black BES mark above the company name in the footer. */
-.footer-brand{flex-direction:column;align-items:flex-start;gap:12px}
-.footer-brand .footer-logo{display:block;width:126px;height:auto;max-width:none}
+/* White footer brand on a black panel. */
+.footer-brand{flex-direction:column;align-items:flex-start;gap:12px;background:#111;padding:16px 18px}
+.footer-brand .footer-logo{display:block;width:126px;height:auto;max-width:none;filter:invert(1)}
+.footer-brand .brand-name{color:#fff}
 @media(max-width:760px){.footer-brand .footer-logo{width:112px}}
 
 /* Pair the contact channels while keeping the introduction full width. */
