@@ -678,9 +678,9 @@ main{flex:1 0 auto}
  .hero-cert-count span{max-width:100px;font-size:8px;line-height:1.25;text-align:left}
 }
 
-/* Keep the Contact Us label centered independently of its arrow. */
-.header-contact{position:relative;justify-content:center;min-width:180px;gap:0}
-.header-contact>.site-arrow{position:absolute;right:22px;top:50%;transform:translateY(-50%)}
+/* Center the Contact Us label and arrow together. */
+.header-contact{justify-content:center;min-width:180px;gap:14px}
+.header-contact>.site-arrow{position:static;transform:none;flex:none}
 
 /* Clearer project ledger hierarchy and a quieter footer link icon. */
 .project-ledger-row .row-title{font-size:18px;line-height:1.25}
