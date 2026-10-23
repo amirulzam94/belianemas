@@ -641,12 +641,12 @@ h1,h2,h3{font-weight:700;color:#111}
 
 /* Match the reference footer's oversized Contact Us line and upper-right arrow. */
 .site-footer{padding-inline:max(48px,calc((100vw - 1440px)/2))}
-.footer-cta{position:relative;display:block;height:.8em;overflow:hidden;padding:0;font-size:clamp(108px,18vw,280px);font-weight:400;line-height:1;letter-spacing:-.066em;white-space:nowrap}
-.footer-cta>.site-arrow{position:absolute;top:.02em;right:0;width:clamp(56px,4.4vw,68px);height:clamp(56px,4.4vw,68px);vertical-align:baseline;transition:transform .25s}
+.footer-cta{position:relative;display:block;height:.8em;overflow:hidden;padding:0;font-size:clamp(68px,11vw,150px);font-weight:400;line-height:1;letter-spacing:-.066em;white-space:nowrap}
+.footer-cta>.site-arrow{position:absolute;top:.02em;right:0;width:clamp(38px,3.5vw,56px);height:clamp(38px,3.5vw,56px);vertical-align:baseline;transition:transform .25s}
 .footer-cta:hover>.site-arrow{transform:translate(5px,-5px)}
 @media(max-width:760px){
  .site-footer{padding-inline:6%}
- .footer-cta{height:.82em;padding:0;font-size:clamp(52px,15vw,110px)}
+ .footer-cta{height:.82em;padding:0;font-size:clamp(42px,13vw,80px)}
  .footer-cta>.site-arrow{top:.03em;width:clamp(26px,6vw,48px);height:clamp(26px,6vw,48px)}
 }
 
@@ -672,16 +672,16 @@ main{flex:1 0 auto}
 .hero-actions>.btn-glass{padding-inline:28px}
 .hero-cert-strip{position:absolute;left:0;bottom:24px;display:flex;align-items:center;max-width:100%;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
 .hero-cert-strip::-webkit-scrollbar{display:none}
-.hero-cert-strip>a{display:inline-flex;align-items:center;flex:0 0 auto;min-height:32px;padding:0 22px;border-right:1px solid #ffffff80;color:#fff;font-size:12px;font-weight:600;line-height:1.2}
-.hero-cert-strip>a:first-child{padding-left:0}
-.hero-cert-strip>a:last-child{padding-right:0;border-right:0}
-.hero-cert-strip>a:hover,.hero-cert-strip>a:focus-visible{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.hero-cert-strip>:is(a,button){display:inline-flex;align-items:center;flex:0 0 auto;min-height:32px;padding:0 22px;border:0;border-right:1px solid #ffffff80;background:none;color:#fff;font-size:12px;font-weight:600;line-height:1.2}
+.hero-cert-strip>:first-child{padding-left:0}
+.hero-cert-strip>:last-child{padding-right:0;border-right:0}
+.hero-cert-strip>:is(a,button):hover,.hero-cert-strip>:is(a,button):focus-visible{color:#fff;text-decoration:underline;text-underline-offset:3px}
 .hero-cert-more{gap:9px}
 .hero-cert-more strong{font-size:23px;line-height:1;letter-spacing:-.04em}
 .hero-cert-more span{font-size:11px;line-height:1.2;font-weight:400}
 @media(max-width:760px){
  .hero-cert-strip{bottom:18px}
- .hero-cert-strip>a{padding-inline:12px;font-size:9px}
+ .hero-cert-strip>:is(a,button){padding-inline:12px;font-size:9px}
  .hero-cert-more strong{font-size:18px}
  .hero-cert-more span{font-size:9px}
 }
@@ -699,8 +699,7 @@ main{flex:1 0 auto}
 }
 
 /* Put the black panel behind the BES mark only. */
-.footer-brand{flex-direction:column;align-items:flex-start;gap:12px;background:transparent;padding:0}
-.footer-brand .footer-logo{display:block;width:146px;height:auto;max-width:none;padding:8px 10px;background:#fff;filter:invert(1)}
+.footer-brand{flex-direction:column;align-items:flex-start;gap:0;background:transparent;padding:0}
 .footer-brand .brand-name{color:#111}
 @media(max-width:760px){.footer-brand .footer-logo{width:132px}}
 
@@ -721,3 +720,19 @@ main{flex:1 0 auto}
 /* Contact form submit button. */
 .contact-form .btn[type="submit"]{background:#111;border-color:#111;color:#fff}
 .contact-form .btn[type="submit"]:hover,.contact-form .btn[type="submit"]:focus-visible{background:#f26a21;border-color:#f26a21;color:#111}
+
+/* Certificate previews use flattened watermarked images, not public PDF links. */
+.certification-card{text-align:left;font-family:inherit;color:inherit;cursor:pointer}
+.certificate-viewer{padding-top:55px}
+.certificate-viewer h2{margin-bottom:8px}
+.certificate-viewer>p{font-size:12px;color:#666}
+.certificate-viewer-image{display:grid;place-items:center;margin:24px auto 12px;padding:18px;background:#ededeb;border:1px solid #ddd}
+.certificate-viewer-image img{display:block;max-width:100%;max-height:62svh;width:auto;height:auto;object-fit:contain;user-select:none}
+.certificate-viewer-note{margin:0;text-align:center;font-size:10px!important}
+@media(max-width:600px){.certificate-viewer{padding:55px 18px 25px}.certificate-viewer-image{padding:8px}.certificate-viewer-image img{max-height:55svh}}
+
+/* Keep the contact preview clear about delivery and preserve the two-row layout. */
+.contact-details>.contact-detail>p:not(.eyebrow){margin:0;color:#666;font-size:12px;line-height:1.7}
+.contact-form .form-status:not(:empty){margin:14px 0 0;padding:12px 14px;border-left:3px solid #f26a21;background:#fff;color:#333;font-size:11px;line-height:1.6}
+.footer-grid{padding-block:30px}
+.footer-bottom{padding-block:15px}
