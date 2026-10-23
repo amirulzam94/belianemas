@@ -713,8 +713,9 @@ main{flex:1 0 auto}
 }
 
 /* Contact form submit button. */
-.contact-form .btn[type="submit"]{background:#111;border-color:#111;color:#fff}
-.contact-form .btn[type="submit"]:hover,.contact-form .btn[type="submit"]:focus-visible{background:#f26a21;border-color:#f26a21;color:#111}
+.contact-form .btn[type="submit"]{justify-content:center;text-align:center;background:#f26a21;border-color:#f26a21;color:#111}
+.contact-form .btn[type="submit"]:hover:not(:disabled),.contact-form .btn[type="submit"]:focus-visible:not(:disabled){background:#df5816;border-color:#df5816;color:#111}
+.contact-form .btn[type="submit"]:disabled{background:#111;border-color:#111;color:#fff;opacity:.55;cursor:not-allowed;transform:none;box-shadow:none}
 
 /* Certificate previews use flattened watermarked images, not public PDF links. */
 .certification-card{text-align:left;font-family:inherit;color:inherit;cursor:pointer}
