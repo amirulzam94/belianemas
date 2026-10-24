@@ -774,3 +774,4 @@ main{flex:1 0 auto}
 .footer-bottom{padding-block:15px}
 @media(max-width:480px){.capability-spotlight-content strong{font-size:clamp(23px,6.8vw,31px)}.capability-spotlight-last{gap:8px}.capability-spotlight-arrow{width:24px;height:24px}.capability-spotlight-arrow .site-arrow{width:22px;height:22px}}
 @media(prefers-reduced-motion:reduce){.capability-spotlight-arrow{transition:none}}
+html.lenis{scroll-behavior:auto}

@@ -50,7 +50,7 @@ if(root){
   }
   function render(){const items=visibleItems();if(items.length&&!items.some(item=>item.id===activeId)){activeId=items[0].id;activePhoto=0}renderFilters();renderList(items);renderDetail(items.find(item=>item.id===activeId))}
   filterBox.addEventListener('click',event=>{const button=event.target.closest('[data-group]');if(!button)return;activeGroup=button.dataset.group;render()});
-  list.addEventListener('click',event=>{const button=event.target.closest('[data-id]');if(!button)return;activeId=button.dataset.id;activePhoto=0;history.replaceState(null,'',`#${activeId}`);render();if(matchMedia('(max-width: 900px)').matches)detail.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'})});
+  list.addEventListener('click',event=>{const button=event.target.closest('[data-id]');if(!button)return;activeId=button.dataset.id;activePhoto=0;history.replaceState(null,'',`#${activeId}`);render();if(matchMedia('(max-width: 900px)').matches){if(window.siteLenis)window.siteLenis.scrollTo(detail);else detail.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'})}});
   detail.addEventListener('click',event=>{const choice=event.target.closest('[data-photo]');if(choice){activePhoto=Number(choice.dataset.photo);renderDetail(machinery.find(item=>item.id===activeId))}if(event.target.closest('#machine-clear')){search.value='';activeGroup='All equipment';activeId='excavator';activePhoto=0;render();search.focus()}});
   search.addEventListener('input',render);
   document.addEventListener('keydown',event=>{if(event.key==='/'&&!/input|textarea|select/i.test(document.activeElement?.tagName)){event.preventDefault();search.focus()}});

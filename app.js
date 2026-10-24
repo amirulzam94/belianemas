@@ -183,7 +183,7 @@ aboutDropdown?.addEventListener('focusout',e=>{if(!aboutDropdown.contains(e.rela
 document.addEventListener('click',e=>{if(!aboutDropdown?.contains(e.target))setAboutDropdown(false)});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&aboutDropdownToggle?.getAttribute('aria-expanded')==='true'){setAboutDropdown(false);aboutDropdownToggle.focus()}});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('#mobile-menu').hidden){$('#mobile-menu').hidden=true;$('.menu-toggle').setAttribute('aria-expanded','false');$('.menu-toggle').setAttribute('aria-label','Open navigation');$('.menu-toggle').focus()}});
-$$('.back-top').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'})}));
+$$('.back-top').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();if(window.siteLenis)window.siteLenis.scrollTo(0);else window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'})}));
 const enquiryForm=$('#enquiry-form');
 const departmentFor=topic=>topic==='career'?'careers team':topic==='project'?'projects team':'general enquiries team';
 const enquirySubmit=enquiryForm?.querySelector('button[type="submit"]');
@@ -192,7 +192,7 @@ enquiryForm?.addEventListener('input',()=>{$('#form-status').textContent='';upda
 enquiryForm?.addEventListener('change',()=>{$('#form-status').textContent='';updateEnquirySubmit()});
 updateEnquirySubmit();
 enquiryForm?.addEventListener('submit',e=>{e.preventDefault();if(!enquiryForm.reportValidity())return;const topic=new FormData(enquiryForm).get('topic');$('#form-status').textContent=`Frontend preview: your message is ready for the ${departmentFor(topic)}, but it has not been sent. Message delivery will be connected when the site goes live.`});
-if(location.hash){requestAnimationFrame(()=>{const target=document.getElementById(decodeURIComponent(location.hash.slice(1)));target?.scrollIntoView()})}
+if(location.hash){requestAnimationFrame(()=>{const target=document.getElementById(decodeURIComponent(location.hash.slice(1)));if(target){if(window.siteLenis)window.siteLenis.scrollTo(target,{immediate:true});else target.scrollIntoView()}})}
 
 // Motion stops while someone reads, focuses a card, or opens its details.
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
