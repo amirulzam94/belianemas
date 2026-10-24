@@ -8,5 +8,5 @@
 *.jpeg -text
 *.png -text
 *.webp -text
-*.pdf -text
+*.pdf binary
 *.ttf -text

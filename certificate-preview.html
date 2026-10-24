@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Certificate Preview | BELIANEMAS SYNERGY</title>
+  <link rel="stylesheet" href="assets/approved/fonts.css">
+  <link rel="stylesheet" href="refined.css">
+  <link rel="stylesheet" href="motion.css?v=20261024-bold-wordmark">
+</head>
+<body class="certificate-full-body">
+  <main class="certificate-full-page">
+    <header class="certificate-full-top">
+      <div>
+        <h1 id="certificate-title">Certificate preview</h1>
+        <p>Image preview. The original PDF is not available in this local mockup.</p>
+      </div>
+      <a href="./index.html#certifications">Back to certifications</a>
+    </header>
+    <figure class="certificate-full-figure">
+      <span class="certificate-sheet"><img id="certificate-image" alt="Watermarked certificate preview" draggable="false"></span>
+    </figure>
+    <p class="certificate-full-caption">FOR PREVIEW ONLY</p>
+  </main>
+  <script>
+    const previews = [
+      ['ISO 9001:2015', 'iso-9001-2015-preview.jpg'],
+      ['ISO 37001:2025', 'iso-37001-2025-preview.jpg'],
+      ['CIDB Grade G7 · PPK', 'cidb-ppk-preview.jpg'],
+      ['CIDB SPKK', 'cidb-spkk-preview.jpg'],
+      ['CIDB SCORE · 4-Star Rating', 'cidb-score-4-star-preview.jpg'],
+      ['UPKJ Mechanical Works Registration', 'upkj-mechanical-preview.jpg'],
+      ['UPKJ Bumiputera Status', 'upkj-bumiputera-status-preview.jpg'],
+      ['UPKJ State Rescue Contractor', 'upkj-state-rescue-contractor-preview.jpg'],
+      ['UPKJ Sarawak Contractor Status', 'upkj-stb-preview.jpg'],
+      ['UPKJ Works Registration', 'upkj-work-preview.jpg'],
+      ['PKK Bumiputera Contractor Status', 'pkk-bumiputera-status-preview.jpg'],
+      ['Ministry of Finance Registration', 'mof-registration-preview.jpg'],
+      ['PETRONAS License', 'petronas-license-preview.jpg'],
+      ['PETROS Vendor Registration', 'petros-vendor-registration-preview.jpg'],
+      ['Malaysia Airports Registration', 'mahb-registration-preview.jpg'],
+      ['Master Builders Association Malaysia', 'mbam-2026-preview.jpg']
+    ];
+    const selected = new URLSearchParams(location.search).get('certificate');
+    const index = selected !== null && /^\d+$/.test(selected) ? Number(selected) : -1;
+    const certificate = previews[index];
+    if ([0, 1, 2, 3, 4, 6, 9].includes(index)) {
+      location.replace(`assets/approved/certifications/pdf-previews/${certificate[1].replace('.jpg', '.pdf')}?v=20261024-unified-sources`);
+    } else if (certificate) {
+      document.title = `${certificate[0]} Preview | BELIANEMAS SYNERGY`;
+      document.getElementById('certificate-title').textContent = certificate[0];
+      const image = document.getElementById('certificate-image');
+      image.src = `assets/approved/certifications/previews/${certificate[1]}`;
+      image.alt = `Watermarked full-size preview of ${certificate[0]}`;
+    } else {
+      document.getElementById('certificate-title').textContent = 'Preview unavailable';
+      document.querySelector('.certificate-full-figure').remove();
+      document.querySelector('.certificate-full-caption').remove();
+    }
+  </script>
+</body>
+</html>
